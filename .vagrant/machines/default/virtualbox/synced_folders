@@ -1,0 +1,1 @@
+{"virtualbox":{"/home/vagrant/db-assignment-3":{"type":null,"mount_options":[],"guestpath":"/home/vagrant/db-assignment-3","hostpath":"/Users/TarGewz/Code/db_assignment_3","disabled":false,"__vagrantfile":true},"/vagrant":{"guestpath":"/vagrant","hostpath":"/Users/TarGewz/Code/db_assignment_3","disabled":false,"__vagrantfile":true}}}
