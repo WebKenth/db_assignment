@@ -5,10 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
-use App\Question;
 use Illuminate\Support\Facades\Validator;
+use App\Choice;
 
-class QuestionController extends Controller
+class ChoiceController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -76,15 +76,15 @@ class QuestionController extends Controller
             'title' => 'required'
         ]);
         if ($validator->fails()) {
-            $request->session()->flash('question-danger', 'Question Was Not Changed');
+            $request->session()->flash('choice-danger', 'Choice Was Not Changed');
             return redirect('/admin/')
                     ->withErrors($validator);
         }
-        $question = Question::findOrFail($id);
-        $question->title = $request->title;
-        $question->description = $request->description;
-        $question->save();
-        $request->session()->flash('question-success', 'Question Was Successfully Changed');
+        $choice = Choice::findOrFail($id);
+        $choice->title = $request->title;
+        $choice->description = $request->description;
+        $choice->save();
+        $request->session()->flash('choice-success', 'Choice Was Successfully Changed');
         return redirect('/admin');
     }
 

@@ -15,6 +15,7 @@ class CreateTextResponseTable extends Migration
         Schema::create('text_response', function (Blueprint $table) {
             $table->integer('response_id')->unsigned();
             $table->integer('question_id')->unsigned();
+            $table->string('response');
             $table->timestamps();
             
             $table->foreign('response_id')

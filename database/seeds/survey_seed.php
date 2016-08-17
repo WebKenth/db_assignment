@@ -117,7 +117,7 @@ class survey_seed extends Seeder
 
         // Question #4 Rating
         $question_4 = new Question;
-        $question_4->title = 'Describe SQL in less than 1 Sentence';
+        $question_4->title = 'Describe Morten in less than 1 Sentence';
         $question_4->description = 'Good Luck';
         $question_4->required = true;
         $question_4->survey_id = $survey->id;

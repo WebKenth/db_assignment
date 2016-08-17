@@ -3,6 +3,7 @@
 namespace App;
 
 use App\SurveyParticipant;
+use App\Question;
 use Illuminate\Database\Eloquent\Model;
 
 class Survey extends Model
@@ -12,8 +13,20 @@ class Survey extends Model
         return $this->hasMany(SurveyParticipant::class);
     }
 
-    public function addSurveyParticipant(SurveyParticipant $survey_participant)
+    public function questions()
     {
-        return $this->survey_participants()->save($survey_participant);
+        return $this->hasMany(Question::class);
+    }
+
+    public function retrieveResponses()
+    {
+        $responses = array();
+        $questions = $this->questions()->getResults();
+        foreach ($questions as $question)
+        {
+            $responses[] = $question->response;
+        }
+        return $responses;
     }
 }
+

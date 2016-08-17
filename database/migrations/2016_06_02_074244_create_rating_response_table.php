@@ -15,6 +15,7 @@ class CreateRatingResponseTable extends Migration
         Schema::create('rating_response', function (Blueprint $table) {
             $table->integer('response_id')->unsigned();
             $table->integer('question_id')->unsigned();
+            $table->string('response');
             $table->timestamps();
 
             $table->foreign('response_id')

@@ -11,17 +11,21 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 Route::auth();
-
-
-
 Route::group(['middleware' => ['auth']], function () {
-    Route::get('/home', 'HomeController@index');
+    Route::get('/', 'HomeController@index');
+    Route::get('admin','AdminController@index');
+    Route::get('admin/stats/{id}','AdminController@stats');
     Route::resource('survey','SurveyController');
     Route::resource('question','QuestionController');
+    Route::resource('choice','ChoiceController');
     Route::resource('response','ResponseController');
+    Route::get('/survey/exit_message/{id}','SurveyController@exit_message');
 });
+
+// Display all SQL executed in Eloquent
+//Event::listen('illuminate.query', function($query)
+//{
+//    var_dump($query);
+//});

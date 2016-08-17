@@ -24,6 +24,8 @@
             margin-right: 6px;
         }
     </style>
+
+    <link rel="stylesheet" href="/main.css">
 </head>
 <body id="app-layout">
     <nav class="navbar navbar-default navbar-static-top">
@@ -47,7 +49,9 @@
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
-                    <li><a href="{{ url('/home') }}">Home</a></li>
+                    <li><a href="{{ url('/') }}">Start</a></li>
+                    <li><a href="{{ url('/admin') }}">Rediger Spørgeskemaer</a></li>
+                    <li><a href="{{ url('/admin/stats/1') }}">Stats</a></li>
                 </ul>
 
                 <!-- Right Side Of Navbar -->
